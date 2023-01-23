@@ -1,0 +1,105 @@
+1)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < n / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[n - i - 1];
+        arr[n - i - 1] = temp;
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
+----------------------------------------------------------------------------------------
+2)
+#include <iostream>
+using namespace std;
+
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    bubbleSort(arr, n);
+
+    cout << "Sorted array: \n";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
+----------------------------------------------------------------------------------------
+3)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = { 2, 3, 2, 5, 6, 2, 7, 8 , 7, 2, 4 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int max_element = arr[0];
+    int max_count = 1;
+    int curr_count;
+    for(int i = 0; i < n; i++) {
+        curr_count = 1;
+        for(int j = i + 1; j < n; j++) {
+            if(arr[i] == arr[j])
+                curr_count++;
+        }
+        if(curr_count > max_count) {
+            max_count = curr_count;
+            max_element = arr[i];
+        }
+    }
+    cout << "element: " << max_element << endl;
+    cout << "Frequency: " << max_count;
+    return 0;
+}
+----------------------------------------------------------------------------------------
+4)
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int arr[] = { 3, 2, 5, 6, 7, 8, 9, 1 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    sort(arr, arr + n);
+    int sum = arr[0] + arr[1];
+    cout << "Sum of two smallest elements: " << sum;
+    return 0;
+}
+----------------------------------------------------------------------------------------
+5)
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int arr[] = { 3, 2, 5, 6, 7, 8, 9, 1 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    sort(arr, arr + n);
+    int sum = arr[0] + arr[1];
+    cout << "Sum of two smallest elements: " << sum;
+    return 0;
+}
+
+
+
