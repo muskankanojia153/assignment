@@ -1,0 +1,106 @@
+1)
+
+
+#include <iostream>
+#include <string>
+
+int main()
+{
+  int arr1[] = {1, 2, 3};
+  int arr2[] = {3, 4, 6};
+
+  std::basic_string<int> s1(arr1, 3);
+  std::basic_string<int> s2(arr2, 3);
+
+  std::basic_string<int> concat(s1 + s2);
+
+  for (std::basic_string<int>::const_iterator i(concat.begin());
+    i != concat.end();
+    ++i)
+  {
+    std::cout << *i << " ";
+  }
+
+  std::cout << std::endl;
+
+  return 0;
+}
+
+
+
+------------------------------------------------------------------------------------------
+2)
+
+
+#include <bits/stdc++.h>
+using namespace std;
+vector<int> smallerNumbersThanCurrent(vector<int>& nums) 
+{
+    vector<int> ans;
+    for(int i=0;i<nums.size();i++)
+    {
+        int val=nums.at(i),count=0;
+        for(int j=0;j<nums.size();j++)
+        {
+            if(nums.at(j)<val)  count++;
+        }
+        ans.push_back(count);
+    }
+    return ans;
+}
+int main() 
+{
+    vector<int> nums{ 8 , 1, 2 , 2 , 3 }; 
+    vector<int> ans=smallerNumbersThanCurrent(nums);
+    
+    for(auto val:ans) cout<<val<<" ";
+    cout<<endl;
+    
+    return 0;  
+}
+
+
+
+------------------------------------------------------------------------------------------
+3)
+
+
+#include <iostream>
+using namespace std;
+int calcArraySum(int arr[], int n){
+   if(n == 1){
+      return arr[n-1];
+   }
+   return arr[n-1] + calcArraySum(arr, n-1);
+}
+int main(){
+   int arr[] = {1, 4, 5, 7, 6};
+   int n = sizeof(arr)/ sizeof(arr[0]);
+   cout<<"The sum of elements in a given array is"<<calcArraySum(arr, n);
+   return 0;
+}
+
+
+
+------------------------------------------------------------------------------------------
+4)
+
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main ()
+{
+    char str[50];
+    int count = 0, i; 
+    cout << "Enter a string : ";
+    gets(str);
+    for (i = 0; str[i] != '\0';i++)
+    {
+        if (str[i] == ' ')
+            count++;    
+    }
+    cout << "Number of words in the string are: " << count + 1;
+    return 0;
+}
+
